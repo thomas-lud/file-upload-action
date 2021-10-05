@@ -1,0 +1,25 @@
+# action.yml
+name: 'update qbee file manager'
+description: 'delete old file and upload new file into the qbee file manager'
+inputs:
+  token:
+    description: 'jwt token'
+    required: true
+  filename:
+    description: 'filename without path'
+    required: true
+  qbee_directory:
+    description: 'path to directory in the qbee file manager where the file should be uploaded'
+    required: true
+  local_directory:
+    description: 'path to the local (GitHub) directory in which the file is located - default: ./'
+    required: false
+    default: './'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.token }}
+    - ${{ inputs.filename }}
+    - ${{ inputs.qbee_directory }}
+    - ${{ inputs.local_directory }}
