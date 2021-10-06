@@ -33,6 +33,7 @@ echo $apiOutput
 if [ "$http_code" == "null" ]; then
     http_code=$(echo $apiOutput | jq -cs | jq -r '.[0].http_code')
 else
+    :
     #echo "http_code was not null"
 fi
 
