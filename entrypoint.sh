@@ -46,7 +46,7 @@ else
 fi
 
 apiPostOutput=$(curl --request POST -sL -H "Content-Type:multipart/form-data" \
-               -F "path=/$qbee_directory/" -F "file=@$local_directory$filename" \
+               -F "path=$qbee_directory" -F "file=@$local_directory$filename" \
                --url 'https://www.app.qbee.io/api/v2/file'\
                --header 'Authorization: Bearer '"$token"\
                -w "\n{\"http_code\":%{http_code}}\n")
