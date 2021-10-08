@@ -41,6 +41,8 @@ if [[ "$http_code" != "$successful_status_code" && "$http_code" != "400" && "$ht
     echo "http_code was - $http_code"
     echo "something went wrong ... aborting"
     exit 1
+elif [ "$http_code" == "400" ]; then
+    echo "file not found ... not a problem ... continuing"
 else
     echo "http_code was - $http_code"
 fi
