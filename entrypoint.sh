@@ -5,6 +5,14 @@ token=$1
 filename=$2
 qbee_directory=$3
 local_directory=$4
+run=$5
+
+if [ "$run" != true ]; then
+    echo "run is set to false: all files up to date - not performing upload"
+    exit 0
+else
+    echo "running file-upload-action for $filename"
+fi
 
 successful_status_code='200'
 

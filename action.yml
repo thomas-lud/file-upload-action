@@ -15,6 +15,10 @@ inputs:
     description: 'path to the local (GitHub) directory in which the file is located - default: ./'
     required: false
     default: './'
+  run:
+    description: 'perform the action or not'
+    required: false
+    default: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -23,3 +27,4 @@ runs:
     - ${{ inputs.filename }}
     - ${{ inputs.qbee_directory }}
     - ${{ inputs.local_directory }}
+    - ${{ inputs.run }}
