@@ -51,3 +51,4 @@ The usage of [qbee-io/authenticate-action](https://github.com/qbee-io/authentica
 * `filename`: filename to upload **without** path
 * `qbee_directory`: path to directory in the qbee file manager where the file should be uploaded
 * `local_directory`: path to the local (GitHub) directory in which the file is located - default: ./
+* `run`: set to 0 if the upload action should not be performed (default 1: performing file upload)

@@ -7,7 +7,9 @@ qbee_directory=$3
 local_directory=$4
 run=$5
 
-if [ "$run" != true ]; then
+echo -e "init token: $token\nfilename: $filename\nqbee_directory: $qbee_directory\nlocal_directory: $local_directory\nrun: $run"
+
+if [ $run != 1 ]; then
     echo "run is set to false: all files up to date - not performing upload"
     exit 0
 else
@@ -15,8 +17,6 @@ else
 fi
 
 successful_status_code='200'
-
-echo -e "init token: $token\nfilename: $filename\nqbee_directory: $qbee_directory\nlocal_directory: $local_directory"
 
 #get absolute path and add trailing slash
 local_directory="$(cd $local_directory && pwd)/"
