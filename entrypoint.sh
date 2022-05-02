@@ -27,7 +27,7 @@ local_directory="$(cd $local_directory && pwd)/"
 
 apiOutput=$(curl --request "DELETE" -sL -d "path=$qbee_directory$filename" \
             -H "Content-type: application/x-www-form-urlencoded" \
-            --url 'https://www.app.qbee.io/api/v2/file' \
+            --url 'https://www.app.qbee.io:9443/api/v2/file' \
             --header 'Authorization: Bearer '"$token" \
             -w "\n{\"http_code\":%{http_code}}\n")
 
@@ -57,7 +57,7 @@ fi
 
 apiPostOutput=$(curl --request POST -sL -H "Content-Type:multipart/form-data" \
                -F "path=$qbee_directory" -F "file=@$local_directory$filename" \
-               --url 'https://www.app.qbee.io/api/v2/file'\
+               --url 'https://www.app.qbee.io:9443/api/v2/file'\
                --header 'Authorization: Bearer '"$token"\
                -w "\n{\"http_code\":%{http_code}}\n")
 
